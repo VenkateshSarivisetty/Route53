@@ -28,9 +28,9 @@ jobs:
       - name: Update TFVars
         run: sed -i 's/ALB_URL=.*/ALB_URL=second_url/' /home/runner/work/Route53/Route53/testing.tfvars
         
-      - name: Debug PAT
+      - name: Debug PATH
         run: |
-         echo "PAT_TOKEN: $PAT_TOKEN"
+         echo "PATH_TOKEN: $PATH_TOKEN"
          
       - name: Commit and Push Changes
         run: |
@@ -38,4 +38,4 @@ jobs:
           git commit -m "Update ALB_URL to new_url"
           git push origin update-tfvars-${{ github.run_number }}
         env:
-          PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
+          PATH_TOKEN: ${{ secrets.PATH_TOKEN }}
