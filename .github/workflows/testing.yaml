@@ -24,10 +24,8 @@ jobs:
 
       - name: Update TFVars
         run: |
-          pwd
-          ls -R
-          cat Route53/testing.tfvar
-          sed -i 's/ALB_URL=.*/ALB_URL=new_url/' Route53/testing.tfvar
+          cd Route53
+          sed -i 's/ALB_URL=.*/ALB_URL=new_url/' testing.tfvar
 
       - name: Commit and Push Changes
         run: |
