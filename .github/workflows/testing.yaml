@@ -27,7 +27,11 @@ jobs:
 
       - name: Update TFVars
         run: sed -i 's/ALB_URL=.*/ALB_URL=second_url/' /home/runner/work/Route53/Route53/testing.tfvars
-
+        
+      - name: Debug PAT
+        run: |
+         echo "PAT_TOKEN: $PAT_TOKEN"
+         
       - name: Commit and Push Changes
         run: |
           git add /home/runner/work/Route53/Route53/testing.tfvars
