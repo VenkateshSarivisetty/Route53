@@ -21,6 +21,10 @@ jobs:
       - name: Create Branch
         run: git checkout -b update-tfvars-${{ github.run_number }}
 
+      - name: List files in the repository
+        run: |
+          ls ${{ github.workspace }}
+
       - name: Update TFVars
         run: sed -i 's/ALB_URL=.*/ALB_URL=new_url/' */Route53/testing.tfvar
 
