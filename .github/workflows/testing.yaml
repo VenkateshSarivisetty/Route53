@@ -26,10 +26,10 @@ jobs:
           ls ${{ github.workspace }}
 
       - name: Update TFVars
-        run: sed -i 's/ALB_URL=.*/ALB_URL=new_url/' /home/runner/work/Route53/Route53/testing.tfvars
+        run: sed -i 's/ALB_URL=.*/ALB_URL=second_url/' /home/runner/work/Route53/Route53/testing.tfvars
 
       - name: Commit and Push Changes
         run: |
-          git add path/to/your/file1.tfvar
+          git add /home/runner/work/Route53/Route53/testing.tfvars
           git commit -m "Update ALB_URL to new_url"
           git push origin update-tfvars-${{ github.run_number }}
