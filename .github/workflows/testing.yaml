@@ -22,7 +22,7 @@ jobs:
         run: git checkout -b update-tfvars-${{ github.run_number }}
 
       - name: Update TFVars
-        run: sed -i 's/ALB_URL=.*/ALB_URL=new_url/' testing.tfvar
+        run: sed -i 's/ALB_URL=.*/ALB_URL=new_url/' */Route53/testing.tfvar
 
       - name: Commit and Push Changes
         run: |
