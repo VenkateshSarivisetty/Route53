@@ -26,7 +26,7 @@ jobs:
           ls ${{ github.workspace }}
 
       - name: Update TFVars
-        run: sed -i 's/ALB_URL=.*/ALB_URL=new_url/' */Route53/testing.tfvar
+        run: sed -i 's/ALB_URL=.*/ALB_URL=new_url/' /home/runner/work/Route53/Route53/testing.tfvars
 
       - name: Commit and Push Changes
         run: |
