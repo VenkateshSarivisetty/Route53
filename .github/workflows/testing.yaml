@@ -43,6 +43,9 @@ jobs:
     - name: Create and switch to a new branch
       run: git checkout -b ${{ env.NEW_BRANCH_NAME }}
 
+    - name: Make changes for testing
+      run: echo "Testing changes" >> test.txt  # Add your testing changes here
+
     # Do the required changes
 
     - name: Commit changes
